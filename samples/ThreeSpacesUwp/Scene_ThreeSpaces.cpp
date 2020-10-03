@@ -142,6 +142,8 @@ namespace {
                 } else {
                     hologram.Object->Pose() = spaceLocation.pose;
                 }
+
+                hologram.Object->SetFillMode(Pose::IsPoseTracked(spaceLocation) ? Pbr::FillMode::Solid : Pbr::FillMode::Wireframe);
             } else {
                 hologram.Object->SetVisible(false);
             }
@@ -223,13 +225,13 @@ namespace {
             Hologram(Hologram&) = delete;
             Hologram(Hologram&&) = default;
 
-            Hologram(XrSpace space, std::shared_ptr<engine::Object> object, std::optional<XrPosef> pose = {})
+            Hologram(XrSpace space, std::shared_ptr<engine::PbrModelObject> object, std::optional<XrPosef> pose = {})
                 : Object(std::move(object))
                 , Space(space)
                 , Pose(pose) {
             }
 
-            std::shared_ptr<engine::Object> Object;
+            std::shared_ptr<engine::PbrModelObject> Object;
             XrSpace Space = XR_NULL_HANDLE;
             std::optional<XrPosef> Pose = {};
         };
