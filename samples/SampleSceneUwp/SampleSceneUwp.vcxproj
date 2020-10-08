@@ -93,7 +93,7 @@
       <PreprocessorDefinitions>UWP;WIN32;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalOptions>%(AdditionalOptions) /permissive-</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /permissive- /await</AdditionalOptions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <TreatWarningAsError>true</TreatWarningAsError>
       <CompileAsManaged>false</CompileAsManaged>
@@ -136,6 +136,7 @@
     </ClCompile>
     <ClCompile Include="Scene_Orbit.cpp" />
     <ClCompile Include="Scene_HandTracking.cpp" />
+    <ClCompile Include="Scene_PlaneFinding.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

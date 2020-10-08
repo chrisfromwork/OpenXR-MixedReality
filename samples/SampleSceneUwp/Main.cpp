@@ -19,6 +19,7 @@
 std::unique_ptr<engine::Scene> TryCreateTitleScene(engine::Context& context);
 std::unique_ptr<engine::Scene> TryCreateOrbitScene(engine::Context& context);
 std::unique_ptr<engine::Scene> TryCreateHandTrackingScene(engine::Context& context);
+std::unique_ptr<engine::Scene> TryCreatePlaneFindingScene(engine::Context& context);
 
 #include <Unknwn.h> // Required to interop with IUnknown. Must be included before C++/WinRT headers.
 #include <winrt/Windows.Foundation.h>
@@ -56,6 +57,7 @@ namespace {
         app->AddScene(TryCreateTitleScene(app->Context()));
         app->AddScene(TryCreateOrbitScene(app->Context()));
         app->AddScene(TryCreateHandTrackingScene(app->Context()));
+        app->AddScene(TryCreatePlaneFindingScene(app->Context()));
         return app;
     }
 

@@ -5,6 +5,7 @@
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Scene_Orbit.cpp" />
     <ClCompile Include="Scene_HandTracking.cpp" />
+    <ClCompile Include="Scene_PlaneFinding.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
